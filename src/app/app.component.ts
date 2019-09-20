@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,22 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    posts = [
-        {
-            title: "Mon premier post",
-            content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate enim facilisis sollicitudin egestas. Morbi vehicula rutrum elit nec luctus. Nam luctus sit amet nibh sed sollicitudin. Nullam nec enim volutpat, dapibus sapien at, scelerisque risus. Ut finibus egestas est, in hendrerit enim aliquam ac. Integer placerat, orci sed convallis egestas, tortor sem congue nibh, at venenatis mi eros eget diam. Donec tincidunt euismod cursus.",
-            loveIts: 0,
-            created_at: new Date()
-        },{
-            title: "Mon deuxième post",
-            content: "Proin vulputate enim facilisis sollicitudin egestas. Morbi vehicula rutrum elit nec luctus. Nam luctus sit amet nibh sed sollicitudin. Nullam nec enim volutpat, dapibus sapien at, scelerisque risus. Ut finibus egestas est, in hendrerit enim aliquam ac. Integer placerat, orci sed convallis egestas, tortor sem congue nibh, at venenatis mi eros eget diam. Donec tincidunt euismod cursus.",
-            loveIts: 0,
-            created_at: new Date()
-        },{
-            title: "Encore un post",
-            content: "Morbi vehicula rutrum elit nec luctus. Nam luctus sit amet nibh sed sollicitudin. Nullam nec enim volutpat, dapibus sapien at, scelerisque risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate enim facilisis sollicitudin egestas. Ut finibus egestas est, in hendrerit enim aliquam ac. Integer placerat, orci sed convallis egestas, tortor sem congue nibh, at venenatis mi eros eget diam. Donec tincidunt euismod cursus.",
-            loveIts: 0,
-            created_at: new Date()
-        }
-    ];
+
+    constructor() {
+        var firebaseConfig = {
+            apiKey: "AIzaSyBzG_almGZglYfDS16xRQ1KCsG9P40vONw",
+            authDomain: "http-client-demo-a1306.firebaseapp.com",
+            databaseURL: "https://http-client-demo-a1306.firebaseio.com",
+            projectId: "http-client-demo-a1306",
+            storageBucket: "http-client-demo-a1306.appspot.com",
+            messagingSenderId: "603562715695",
+            appId: "1:603562715695:web:1f4ef467f5cb8ccadc74da"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    }
 }
